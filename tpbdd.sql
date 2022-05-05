@@ -1,5 +1,4 @@
- create database sales
-    -> ;
+mysql> CREATE DATABASE sales;
 Query OK, 1 row affected (0.00 sec)
 
 mysql> use sales;
@@ -11,7 +10,7 @@ mysql> CREATE TABLE telephones(
     -> name VARCHAR(20) NOT NULL UNIQUE,
     -> manufacturer VARCHAR(15) NOT NULL,
     -> price SMALLINT NOT NULL,
-    -> units_sold MEDIUMINT NOT NULL);
+    -> units_sold SMALLINT NOT NULL);
 Query OK, 0 rows affected (0.01 sec)
 
 mysql> show tables;
@@ -22,8 +21,8 @@ mysql> show tables;
 +-----------------+
 1 row in set (0.00 sec)
 
-mysql> INSERT INTO telephones(name,manufacturer,price,units_sold) VALUES(
-    -> "N1280","Nokia",199,1925),
+mysql> INSERT INTO telephones(name,manufacturer,price,units_sold) VALUES
+    -> ("N1280","Nokia",199,1925),
     -> ("Iphone 4","Apple",399,9436),
     -> ("Galaxy S 5","Samsung",299,2359),
     -> ("S5620 Monte","Samsung",250,2385),
