@@ -50,7 +50,7 @@ FROM clients
 JOIN orders ON clients.id = orders.clientid
 WHERE typePresta = "coaching" AND designation LIKE "React%";
 
-CREATE VIEW v_totals AS SELECT designation, CONCAT((nbDays * unitPrice)," €") AS totalExcludeTaxe, CONCAT(ROUND(totalExcludeTaxe * 1.2), " €") AS totalWithTaxe FROM orders;
+CREATE VIEW v_totals AS SELECT designation, CONCAT((nbDays * unitPrice)," €") AS totalExcludeTaxe, CONCAT(ROUND(totalExcludeTaxe * 1.2), " €") AS totalWithTaxe FROM orders WHERE orders.typepresta = "formation" ;
 
 CREATE VIEW v_expensivePresta AS
 SELECT designation FROM orders WHERE state = "2" AND totalExcludeTaxe > 30000;
